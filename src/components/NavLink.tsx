@@ -1,10 +1,6 @@
-'use client'
-
-
 import Link from 'next/link';
 import styled from 'styled-components';
-import { useRouter } from 'next/navigation';
-
+import { usePathname, useRouter } from 'next/navigation';
 
 const StyledNavLink = styled.a<{ isActive: boolean }>`
   text-decoration: none;
@@ -22,12 +18,7 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => {
-
-  const { pathname } : any = useRouter();
-
-  
-  console.log(pathname)
-    //   const { pathname } = useRouter();
+  const pathname  = usePathname();
   const isActive = pathname === href;
 
   return (

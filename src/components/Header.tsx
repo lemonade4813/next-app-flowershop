@@ -20,17 +20,23 @@ const StyledNav = styled.nav`
   background-color: #f0f0f0;
 `;
 
-const Header = () => (
-    <div>
-      <StyledNav>
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/thismonth">이달의 꽃</NavLink>
-        <NavLink href="/recommend">추천 상품</NavLink>
-        <NavLink href="/product">전체 상품보기</NavLink>
-      </StyledNav>
-    </div>
-  );
+const Header = () => {
   
+  const menuData = [
+    { id: 'menu01', name: 'Home', path: '/' },
+    { id: 'menu02', name: '이달의 꽃', path: '/thismonth' },
+    { id: 'menu03', name: '추천 상품', path: '/recommend' },
+    { id: 'menu04', name: '전체 상품보기', path: '/product' },
+  ];
+
+  return(
+      <StyledNav>
+        {menuData.map((menu) => 
+          <NavLink href={menu.path} key={menu.id}>{menu.name}</NavLink>)
+        }
+      </StyledNav>
+  );
+}  
 
 export default Header;
 
