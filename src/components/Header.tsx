@@ -3,11 +3,27 @@
 
 import Link from 'next/link';
 import { styled } from 'styled-components';
+import { Allura } from 'next/font/google';
+
+
+const allura = Allura({ subsets : ['latin'], weight : '400'})
 
 
 const Nav = styled.nav`
     width : 1920px;
     height : 80px;
+
+`
+
+
+const HeaderContainer = styled.header`
+
+  @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+  height : 50px;
+  text-align : center;
+  line-height : 50px;
+  font-family : 'Allura', cursive;
 
 `
 
@@ -20,8 +36,12 @@ const StyledNav = styled.nav`
   background-color: #f0f0f0;
 `;
 
+
+
 const Header = () => {
   
+
+
   const menuData = [
     { id: 'menu01', name: 'Home', path: '/' },
     { id: 'menu02', name: '이달의 꽃', path: '/thismonth' },
@@ -30,11 +50,14 @@ const Header = () => {
   ];
 
   return(
+      <>
+      <HeaderContainer>La Roseraie</HeaderContainer>
       <StyledNav>
         {menuData.map((menu) => 
           <NavLink href={menu.path} key={menu.id}>{menu.name}</NavLink>)
         }
       </StyledNav>
+      </>
   );
 }  
 
