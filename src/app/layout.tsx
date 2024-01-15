@@ -3,8 +3,18 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import StyledComponentsRegistry from '@/lib/registry'
 import Header from '@/components/Header'
+// import { createGlobalStyle } from 'styled-components'
 
 const inter = Inter({ subsets: ['latin'] })
+
+// const GlobalStyle = createGlobalStyle`
+//   @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+//   header {
+//     font-family: 'Allura', cursive;
+//   }
+// `;
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',

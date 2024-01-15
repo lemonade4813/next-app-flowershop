@@ -25,3 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+/* 폰트 경로 수정 */
+
+/* https://fonts.googleapis.com/css?family=Allura */
+
+
+@font-face {
+  font-family: 'Allura';
+  src : url('https://fonts.gstatic.com/s/allura/v21/9oRPNYsQpS4zjuA_iwgWHNn7GQ.woff2');
+
+}
+  

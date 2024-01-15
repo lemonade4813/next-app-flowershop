@@ -2,12 +2,23 @@
 
 
 import Link from 'next/link';
-import { styled } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
 import { Allura } from 'next/font/google';
 
 
-const allura = Allura({ subsets : ['latin'], weight : '400'})
+// const allura = Allura({ subsets : ['latin'], weight : '400'})
 
+
+// const CustomFontStyles = createGlobalStyle`
+//   @font-face {
+//     font-family: 'Allura';
+//     src: url('https://fonts.gstatic.com/s/allura/v12/9oRPNYsQpS4zjuAPjAIXyjI.woff2') format('woff2');
+//   }
+
+//   .custom-font {
+//     font-family: 'Allura', sans-serif;
+//   }
+// `;
 
 const Nav = styled.nav`
     width : 1920px;
@@ -15,19 +26,18 @@ const Nav = styled.nav`
 
 `
 
-
 const HeaderContainer = styled.header`
 
-  @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-
-  height : 50px;
+  height : 60px;
+  line-height : 60px;
   text-align : center;
-  line-height : 50px;
-  font-family : 'Allura', cursive;
+  font-family : 'Allura';
+  font-size : 30px;
 
 `
 
 import NavLink from './NavLink';
+import GlobalStyle from './GlobalStyle';
 
 const StyledNav = styled.nav`
   display: flex;
@@ -40,8 +50,6 @@ const StyledNav = styled.nav`
 
 const Header = () => {
   
-
-
   const menuData = [
     { id: 'menu01', name: 'Home', path: '/' },
     { id: 'menu02', name: '이달의 꽃', path: '/thismonth' },
@@ -51,7 +59,9 @@ const Header = () => {
 
   return(
       <>
-      <HeaderContainer>La Roseraie</HeaderContainer>
+      <HeaderContainer>
+        <h1>La Roseraie</h1>
+      </HeaderContainer>
       <StyledNav>
         {menuData.map((menu) => 
           <NavLink href={menu.path} key={menu.id}>{menu.name}</NavLink>)
